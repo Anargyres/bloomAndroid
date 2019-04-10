@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home"
+        android:visible="true" />
+    <item
+        android:id="@+id/favorites"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="Favorites" />
+    <item
+        android:id="@+id/tickets"
+        android:icon="@drawable/ic_mail_black_24dp"
+        android:title="Tickets" />
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/ic_account_box_black_24dp"
+        android:title="Account" />
+</menu>
