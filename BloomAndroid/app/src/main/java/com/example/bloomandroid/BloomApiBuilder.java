@@ -6,6 +6,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BloomApiBuilder {
 
@@ -15,7 +16,7 @@ public class BloomApiBuilder {
 
 
     public BloomApiBuilder(String hostname) {
-        retrofit = new Retrofit.Builder().baseUrl(hostname).build();
+        retrofit = new Retrofit.Builder().baseUrl(hostname).addConverterFactory(GsonConverterFactory.create()).build();
     }
 
     public List<EventDTO> getEvents(){
