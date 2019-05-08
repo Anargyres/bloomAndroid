@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -21,7 +20,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_cell,parent);
+        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_cell, parent);
         ViewHolder viewHolder = new ViewHolder(itemLayoutView);
         return viewHolder;
     }
@@ -31,12 +30,16 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         return mEventList.size();
     }
 
-    public EventDTO getItemAtPosition(int position){
+    public EventDTO getItemAtPosition(int position) {
         return mEventList.get(position);
     }
 
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        ((ViewHolder) holder).buildValue(getItemAtPosition(position));
+    }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView eventTitle;
         public ImageView eventImage;
@@ -47,14 +50,9 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             eventImage = itemView.findViewById(R.id.eventImage);
         }
 
-        public void buildValue(EventDTO eventDTO){
+        public void buildValue(EventDTO eventDTO) {
             eventTitle.setText(eventDTO.title);
             //eventImage.setImageDrawable(eventDTO.image);
         }
-    }
-
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((ViewHolder) holder).buildValue(getItemAtPosition(position));
     }
 }

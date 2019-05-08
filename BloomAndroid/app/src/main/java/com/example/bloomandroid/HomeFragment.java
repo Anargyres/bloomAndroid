@@ -1,6 +1,7 @@
 package com.example.bloomandroid;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -40,5 +41,15 @@ public class HomeFragment extends Fragment {
         RecyclerView rv = view.findViewById(R.id.eventsRecyclerView);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(new EventAdapter(eventPresenter.getEvents()));
+
+        rv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), EventDetailActivity.class);
+                intent.putExtra("title", "Soirée 1");
+                intent.putExtra("Desc", "blabla");
+                startActivity(intent);
+            }
+        });
     }
 }
