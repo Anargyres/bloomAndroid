@@ -1,9 +1,15 @@
 package com.example.bloomandroid;
 
-import java.util.ArrayList;
+import android.util.Log;
+
+import com.example.bloomandroid.event.domain.data.EventDTO;
+import com.example.bloomandroid.event.domain.mapper.EventMapper;
+import com.example.bloomandroid.event.domain.model.Event;
+
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -11,24 +17,51 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BloomApiBuilder {
 
 
-    List<EventDTO> mEvents;
-    Retrofit retrofit;
+    BloomService bloomService;
+    private static BloomApiBuilder instance;
 
-
-    public BloomApiBuilder(String hostname) {
-        retrofit = new Retrofit.Builder().baseUrl(hostname).addConverterFactory(GsonConverterFactory.create()).build();
-    }
-
-    public List<EventDTO> getEvents(){
-        BloomService bloomService  = retrofit.create(BloomService.class);
-        Call<List<EventDTO>> callSync = bloomService.getEvents();
-        try {
-            Response<List<EventDTO>> response = callSync.execute();
-            mEvents = response.body();
-        }catch (Exception e){
-
+    public static BloomApiBuilder getInstance() {
+        if (instance == null) {
+            instance = new BloomApiBuilder();
         }
-
-        return mEvents;
+        return instance;
     }
+
+
+    public BloomApiBuilder() {
+        Retrofit retrofit = new Retrofit.Builder().baseUrl( "http://10.33.254.112:3000").addConverterFactory(GsonConverterFactory.create()).build();
+        bloomService = retrofit.create(BloomService.class);
+    }
+
+    public void getEvents(final Listener<List<Event>> listener) {
+        Log.d("Test", "dedans");
+        bloomService.getEvents().enqueue(new Callback<List<EventDTO>>() {
+
+            @Override
+            public void onResponse(Call<List<EventDTO>> call, Response<List<EventDTO>> response) {
+                List<EventDTO> eventDTOList = response.body();
+                List<Event> eventList = EventMapper.map(eventDTOList);
+                Log.d("Test", "success");
+
+                listener.onSuccess(eventList);
+            }
+
+            @Override
+            public void onFailure(Call<List<EventDTO>> call, Throwable t) {
+                listener.onError(t);
+                Log.d("Test", "error");
+            }
+        });
+
+
+
+    }
+
+    public interface Listener<T> {
+        void onSuccess(T data);
+
+        void onError(Throwable t);
+    }
+
+
 }

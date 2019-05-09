@@ -9,39 +9,36 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.bloomandroid.event.domain.model.Event;
 
 import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<EventDTO> mEventList;
+    private List<Event> mEventList;
 
-    public EventAdapter(List<EventDTO> mEventList) {
-        this.mEventList = mEventList;
+    public void setEventList(List<Event> eventList) {
+        this.mEventList = eventList;
+        notifyDataSetChanged();
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_cell, parent);
-        ViewHolder viewHolder = new ViewHolder(itemLayoutView);
-        return viewHolder;
+        return new ViewHolder(itemLayoutView);
     }
 
     @Override
     public int getItemCount() {
-        return mEventList.size();
-    }
-
-    public EventDTO getItemAtPosition(int position) {
-        return mEventList.get(position);
+        return mEventList != null ? mEventList.size() : 0;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        EventDTO eventDTO = mEventList.get(position);
-        ((ViewHolder) holder).eventTitle.setText(eventDTO.title);
+        Event event = mEventList.get(position);
+        ((ViewHolder) holder).eventTitle.setText(event.getTitle());
 
-        Glide.with(holder.itemView).load(eventDTO.image).into(((ViewHolder) holder).eventImage);
+        Glide.with(holder.itemView).load(event.getImageURl()).into(((ViewHolder) holder).eventImage);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -1,18 +1,17 @@
 package com.example.bloomandroid.home;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.bloomandroid.AccountFragment;
 import com.example.bloomandroid.FavoritesFragment;
 import com.example.bloomandroid.R;
 import com.example.bloomandroid.TicketsFragment;
-import com.example.bloomandroid.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,16 +33,16 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 int id = menuItem.getItemId();
-                if(id == R.id.home){
+                if (id == R.id.home) {
                     setFragment(homeFragment);
                     return true;
-                } else if(id == R.id.favorites){
+                } else if (id == R.id.favorites) {
                     setFragment(favoritesFragment);
                     return true;
-                } else if(id == R.id.tickets){
+                } else if (id == R.id.tickets) {
                     setFragment(ticketsFragment);
                     return true;
-                } else if(id == R.id.account) {
+                } else if (id == R.id.account) {
                     setFragment(accountFragment);
                     return true;
                 }
@@ -52,9 +51,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setFragment(Fragment fragment){
+    private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame, fragment);
         fragmentTransaction.commit();
     }
+
+
 }

@@ -1,18 +1,20 @@
 package com.example.bloomandroid;
 
+import com.example.bloomandroid.event.domain.data.EventDTO;
+
 import java.util.List;
 
 public class BloomManager {
 
 
-    String hostname = "http://localhost:3000/";
+    public static final String hostname = "http://localhost:3000";
     BloomApiBuilder bloomApiBuilder;
 
     public BloomManager() {
-        bloomApiBuilder = new BloomApiBuilder(hostname);
+        bloomApiBuilder = new BloomApiBuilder();
     }
 
-    public List<EventDTO> getEvents(){
-        return bloomApiBuilder.getEvents();
-    }
+   /* public List<EventDTO> getEvents() {
+        return bloomApiBuilder.getEvents(BloomApiBuilder.Listener < List < Event >> );
+    }*/
 }
