@@ -20,6 +20,7 @@ public class EventMapper {
         Event event = new Event();
         event.setTitle(eventDTO.getTitle());
         event.setDescription(eventDTO.getDescripttion());
+        event.setImageURl(eventDTO.getImage());
         return event;
     }
 }

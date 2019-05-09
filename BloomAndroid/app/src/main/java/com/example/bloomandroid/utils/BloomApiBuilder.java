@@ -1,10 +1,11 @@
-package com.example.bloomandroid;
+package com.example.bloomandroid.utils;
 
 import android.util.Log;
 
 import com.example.bloomandroid.event.domain.data.EventDTO;
 import com.example.bloomandroid.event.domain.mapper.EventMapper;
 import com.example.bloomandroid.event.domain.model.Event;
+import com.example.bloomandroid.event.domain.service.BloomService;
 
 import java.util.List;
 

@@ -12,9 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.bloomandroid.BloomApiBuilder;
-import com.example.bloomandroid.EventAdapter;
-import com.example.bloomandroid.EventPresenter;
+import com.example.bloomandroid.utils.BloomApiBuilder;
+import com.example.bloomandroid.event.ui.adapter.EventAdapter;
+import com.example.bloomandroid.event.presentation.presenter.EventPresenter;
 import com.example.bloomandroid.R;
 import com.example.bloomandroid.event.domain.model.Event;
 
@@ -38,10 +38,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
         loadData();
-
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -53,6 +50,8 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         eventAdapter = new EventAdapter();
         recyclerView.setAdapter(eventAdapter);
+
+
         //rv.setAdapter(new EventAdapter(eventPresenter.getEvents()));
 
 
@@ -73,7 +72,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onSuccess(List<Event> data) {
                 Log.d("Data", String.valueOf(data));
-                eventAdapter.setEventList(data);
+
+                if(data.isEmpty()){
+                    Log.d("prout", "kjzhf");
+                }else {
+                    eventAdapter.setEventList(data);
+                    Log.d("cez", "zedfz");
+                    Log.d("image",data.get(1).getTitle());
+                }
             }
 
             @Override

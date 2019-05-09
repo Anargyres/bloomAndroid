@@ -1,8 +1,7 @@
-package com.example.bloomandroid;
+package com.example.bloomandroid.event.presentation.presenter;
 
-import com.example.bloomandroid.event.domain.data.EventDTO;
-
-import java.util.List;
+import com.example.bloomandroid.utils.BloomManager;
+import com.example.bloomandroid.event.presentation.contract.IEventPresenter;
 
 public class EventPresenter implements IEventPresenter {
 

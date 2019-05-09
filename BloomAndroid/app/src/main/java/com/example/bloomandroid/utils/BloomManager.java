@@ -1,8 +1,6 @@
-package com.example.bloomandroid;
+package com.example.bloomandroid.utils;
 
-import com.example.bloomandroid.event.domain.data.EventDTO;
-
-import java.util.List;
+import com.example.bloomandroid.utils.BloomApiBuilder;
 
 public class BloomManager {
 

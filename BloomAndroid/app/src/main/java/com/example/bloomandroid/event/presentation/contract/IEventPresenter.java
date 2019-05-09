@@ -1,4 +1,4 @@
-package com.example.bloomandroid;
+package com.example.bloomandroid.event.presentation.contract;
 
 import com.example.bloomandroid.event.domain.data.EventDTO;
 

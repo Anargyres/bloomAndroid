@@ -8,10 +8,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.bloomandroid.AccountFragment;
-import com.example.bloomandroid.FavoritesFragment;
+import com.example.bloomandroid.account.AccountFragment;
+import com.example.bloomandroid.favoris.FavoritesFragment;
 import com.example.bloomandroid.R;
-import com.example.bloomandroid.TicketsFragment;
+import com.example.bloomandroid.ticket.TicketsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
