@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -36,7 +38,10 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((ViewHolder) holder).buildValue(getItemAtPosition(position));
+        EventDTO eventDTO = mEventList.get(position);
+        ((ViewHolder) holder).eventTitle.setText(eventDTO.title);
+
+        Glide.with(holder.itemView).load(eventDTO.image).into(((ViewHolder) holder).eventImage);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -48,11 +53,6 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             super(itemView);
             eventTitle = itemView.findViewById(R.id.eventTitle);
             eventImage = itemView.findViewById(R.id.eventImage);
-        }
-
-        public void buildValue(EventDTO eventDTO) {
-            eventTitle.setText(eventDTO.title);
-            //eventImage.setImageDrawable(eventDTO.image);
         }
     }
 }

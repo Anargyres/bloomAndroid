@@ -1,4 +1,4 @@
-package com.example.bloomandroid;
+package com.example.bloomandroid.home;
 
 
 import android.content.Intent;
@@ -11,6 +11,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.bloomandroid.EventAdapter;
+import com.example.bloomandroid.event.ui.activity.EventDetailActivity;
+import com.example.bloomandroid.EventPresenter;
+import com.example.bloomandroid.R;
 
 
 /**

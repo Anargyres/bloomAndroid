@@ -1,4 +1,4 @@
-package com.example.bloomandroid;
+package com.example.bloomandroid.home;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -7,6 +7,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import com.example.bloomandroid.AccountFragment;
+import com.example.bloomandroid.FavoritesFragment;
+import com.example.bloomandroid.R;
+import com.example.bloomandroid.TicketsFragment;
+import com.example.bloomandroid.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 

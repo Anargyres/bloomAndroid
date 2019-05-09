@@ -1,7 +1,9 @@
-package com.example.bloomandroid;
+package com.example.bloomandroid.event.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.example.bloomandroid.R;
 
 public class EventDetailActivity extends AppCompatActivity {
 
