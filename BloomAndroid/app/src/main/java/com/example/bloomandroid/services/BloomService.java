@@ -1,6 +1,6 @@
-package com.example.bloomandroid.event.domain.service;
+package com.example.bloomandroid.services;
 
-import com.example.bloomandroid.event.domain.data.EventDTO;
+import com.example.bloomandroid.dto.EventDTO;
 
 import java.util.List;
 

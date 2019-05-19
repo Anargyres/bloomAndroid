@@ -1,4 +1,4 @@
-package com.example.bloomandroid.ticket;
+package com.example.bloomandroid.views;
 
 
 import android.os.Bundle;

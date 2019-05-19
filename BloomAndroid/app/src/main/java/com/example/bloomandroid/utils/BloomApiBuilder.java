@@ -2,10 +2,10 @@ package com.example.bloomandroid.utils;
 
 import android.util.Log;
 
-import com.example.bloomandroid.event.domain.data.EventDTO;
-import com.example.bloomandroid.event.domain.mapper.EventMapper;
-import com.example.bloomandroid.event.domain.model.Event;
-import com.example.bloomandroid.event.domain.service.BloomService;
+import com.example.bloomandroid.dto.EventDTO;
+import com.example.bloomandroid.dto.mapper.EventMapper;
+import com.example.bloomandroid.models.Event;
+import com.example.bloomandroid.services.BloomService;
 
 import java.util.List;
 
@@ -28,9 +28,8 @@ public class BloomApiBuilder {
         return instance;
     }
 
-
     public BloomApiBuilder() {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl( "http://10.33.254.112:3000").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl( "http://192.168.1.71:3000").addConverterFactory(GsonConverterFactory.create()).build();
         bloomService = retrofit.create(BloomService.class);
     }
 

@@ -1,4 +1,4 @@
-package com.example.bloomandroid.account;
+package com.example.bloomandroid.views;
 
 
 import android.os.Bundle;

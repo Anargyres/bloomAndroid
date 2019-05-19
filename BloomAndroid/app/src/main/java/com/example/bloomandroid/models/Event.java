@@ -1,4 +1,4 @@
-package com.example.bloomandroid.event.domain.model;
+package com.example.bloomandroid.models;
 
 public class Event {
     public String getTitle() {

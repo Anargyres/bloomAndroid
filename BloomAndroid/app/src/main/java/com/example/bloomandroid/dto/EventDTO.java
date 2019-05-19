@@ -1,4 +1,4 @@
-package com.example.bloomandroid.event.domain.data;
+package com.example.bloomandroid.dto;
 
 import com.google.gson.annotations.SerializedName;
 

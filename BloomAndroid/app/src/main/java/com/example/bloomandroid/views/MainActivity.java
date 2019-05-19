@@ -1,4 +1,4 @@
-package com.example.bloomandroid.home;
+package com.example.bloomandroid.views;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,10 +8,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.bloomandroid.account.AccountFragment;
-import com.example.bloomandroid.favoris.FavoritesFragment;
+import com.example.bloomandroid.views.AccountFragment;
+import com.example.bloomandroid.views.FavoritesFragment;
 import com.example.bloomandroid.R;
-import com.example.bloomandroid.ticket.TicketsFragment;
+import com.example.bloomandroid.views.HomeFragment;
+import com.example.bloomandroid.views.TicketsFragment;
 
 public class MainActivity extends AppCompatActivity {
 

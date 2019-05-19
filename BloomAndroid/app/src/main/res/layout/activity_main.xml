@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.MainActivity">
+    android:background="@color/colorBackground"
+    tools:context=".views.MainActivity">
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_nav"
@@ -20,12 +21,11 @@
         app:menu="@menu/bottom_nav_menu"
     />
     <FrameLayout
+        android:background="@color/colorBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/bottom_nav"
         android:id="@+id/frame"
     >
-
-
     </FrameLayout>
 </RelativeLayout>

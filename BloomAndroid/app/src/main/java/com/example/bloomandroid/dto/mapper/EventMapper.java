@@ -1,7 +1,7 @@
-package com.example.bloomandroid.event.domain.mapper;
+package com.example.bloomandroid.dto.mapper;
 
-import com.example.bloomandroid.event.domain.data.EventDTO;
-import com.example.bloomandroid.event.domain.model.Event;
+import com.example.bloomandroid.dto.EventDTO;
+import com.example.bloomandroid.models.Event;
 
 import java.util.ArrayList;
 import java.util.List;
