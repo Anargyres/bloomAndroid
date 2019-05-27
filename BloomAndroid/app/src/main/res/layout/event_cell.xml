@@ -16,7 +16,7 @@
         android:adjustViewBounds="true" />
 
     <TextView
-        android:id="@+id/eventTitle"
+        android:id="@+id/home_activity_event_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10sp"

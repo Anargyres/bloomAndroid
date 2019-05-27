@@ -29,7 +29,7 @@ public class BloomApiBuilder {
     }
 
     public BloomApiBuilder() {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl( "http://192.168.1.71:3000").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl( "http://10.33.255.59:3000").addConverterFactory(GsonConverterFactory.create()).build();
         bloomService = retrofit.create(BloomService.class);
     }
 
@@ -41,15 +41,12 @@ public class BloomApiBuilder {
             public void onResponse(Call<List<EventDTO>> call, Response<List<EventDTO>> response) {
                 List<EventDTO> eventDTOList = response.body();
                 List<Event> eventList = EventMapper.map(eventDTOList);
-                Log.d("Test", "success");
-
                 listener.onSuccess(eventList);
             }
 
             @Override
             public void onFailure(Call<List<EventDTO>> call, Throwable t) {
                 listener.onError(t);
-                Log.d("Test", "error");
             }
         });
 

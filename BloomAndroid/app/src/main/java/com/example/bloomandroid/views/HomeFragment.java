@@ -38,7 +38,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recyclerView = view.findViewById(R.id.eventsRecyclerView);
+        recyclerView = view.findViewById(R.id.home_activity_event_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         eventAdapter = new EventAdapter();
         recyclerView.setAdapter(eventAdapter);
@@ -54,7 +54,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onError(Throwable t) {
                 t.getMessage();
-                Log.d("Faili", t.getMessage());
             }
         });
     }

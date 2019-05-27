@@ -47,7 +47,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         final Event event = mEventList.get(position);
         ((ViewHolder) holder).eventTitle.setText(event.getTitle());
 
-        Glide.with(holder.itemView).load("http://192.168.1.71:3000/images/" + event.getImageURl()).into(((ViewHolder) holder).eventImage);
+        Glide.with(holder.itemView).load("http://10.33.255.59:3000/images/" + event.getImageURl()).into(((ViewHolder) holder).eventImage);
 
         if (itemClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +66,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            eventTitle = itemView.findViewById(R.id.eventTitle);
+            eventTitle = itemView.findViewById(R.id.home_activity_event_text_view);
             eventImage = itemView.findViewById(R.id.home_activity_event_image_view);
         }
     }
